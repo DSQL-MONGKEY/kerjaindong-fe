@@ -1,5 +1,6 @@
 import GridShape from "@/components/common/GridShape";
 import ThemeTogglerTwo from "@/components/common/ThemeTogglerTwo";
+import { useTranslation } from "react-i18next";
 import React from "react";
 import { Link } from "react-router";
 
@@ -8,6 +9,8 @@ export default function AuthLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const { t } = useTranslation();
+
   return (
     <div className="relative z-1 bg-white p-6 sm:p-0 dark:bg-gray-900">
       <div className="relative flex h-screen w-full flex-col justify-center sm:p-0 lg:flex-row dark:bg-gray-900">
@@ -16,18 +19,20 @@ export default function AuthLayout({
           <div className="relative z-1 flex items-center justify-center">
             <GridShape />
 
-            <div className="flex max-w-xs flex-col items-center">
-              <Link to="/" className="mb-4 block">
-                <img
-                  width={231}
-                  height={48}
-                  src="/images/logo/auth-logo.svg"
-                  alt="Logo"
-                />
+            <div className="flex max-w-xs flex-col items-center gap-4">
+              <Link to="/" className="block">
+                <span className="inline-flex scale-125 items-center gap-2.5">
+                  <span className="grid size-9 place-items-center rounded-xl bg-brand-500 text-lg font-bold text-white">
+                    K
+                  </span>
+                  <span className="text-lg font-semibold tracking-tight text-white">
+                    Kerjaindong
+                  </span>
+                </span>
               </Link>
 
               <p className="text-center text-gray-400 dark:text-white/60">
-                Free and Open-Source Tailwind CSS Admin Dashboard Template
+                {t("brand.tagline")}
               </p>
             </div>
           </div>
