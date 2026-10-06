@@ -4,6 +4,15 @@ import svgr from "vite-plugin-svgr";
 
 // https://vite.dev/config/
 export default defineConfig({
+  // Port 3100 sudah masuk whitelist CORS `CORS_ORIGINS` backend.
+  server: {
+    port: 3100,
+    strictPort: true,
+  },
+  preview: {
+    port: 3100,
+    strictPort: true,
+  },
   resolve: {
     alias: {
       "@": "/src",
