@@ -1,6 +1,7 @@
 import PageBreadCrumb from "@/components/common/PageBreadCrumb";
 import PageMeta from "@/components/common/PageMeta";
 import SimplePagination from "@/components/common/SimplePagination";
+import { SkeletonTable } from "@/components/ui/skeleton/Skeleton";
 import { useAuditLogs } from "@/hooks/useAdmin";
 import { formatDate } from "@/utils/format";
 import { useState } from "react";
@@ -49,7 +50,7 @@ export default function AdminAuditLogsPage() {
       </div>
 
       {query.isPending ? (
-        <div className="h-40 animate-pulse rounded-2xl bg-gray-50 dark:bg-white/3" />
+        <SkeletonTable rows={6} columns={4} />
       ) : logs.length === 0 ? (
         <div className="rounded-2xl border border-gray-200 bg-white p-10 text-center dark:border-gray-800 dark:bg-white/3">
           <p className="text-theme-sm text-gray-500 dark:text-gray-400">

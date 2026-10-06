@@ -1,4 +1,8 @@
 import PageMeta from "@/components/common/PageMeta";
+import Skeleton, {
+  SkeletonJobCardGrid,
+  SkeletonText,
+} from "@/components/ui/skeleton/Skeleton";
 import JobCard from "@/components/jobs/JobCard";
 import FollowCompanyButton from "@/components/seeker/FollowCompanyButton";
 import { usePublicCompany, usePublicJobs } from "@/hooks/useJobs";
@@ -21,7 +25,21 @@ export default function CompanyProfile() {
   if (companyQuery.isPending) {
     return (
       <div className="mx-auto w-full max-w-(--breakpoint-2xl) px-4 py-10 md:px-6">
-        <div className="h-48 animate-pulse rounded-2xl border border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-white/3" />
+        <div className="rounded-2xl border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-white/3">
+          <div className="flex items-center gap-4">
+            <Skeleton className="size-16 shrink-0 rounded-2xl" />
+            <div className="flex-1 space-y-2">
+              <Skeleton className="h-5 w-1/2" />
+              <Skeleton className="h-3.5 w-1/3" />
+            </div>
+          </div>
+          <SkeletonText lines={3} className="mt-5" />
+        </div>
+
+        <div className="mt-8">
+          <Skeleton className="mb-4 h-4 w-40" />
+          <SkeletonJobCardGrid count={3} />
+        </div>
       </div>
     );
   }
@@ -110,14 +128,7 @@ export default function CompanyProfile() {
           </h2>
 
           {jobsQuery.isPending ? (
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
-              {Array.from({ length: 3 }).map((_, index) => (
-                <div
-                  key={index}
-                  className="h-44 animate-pulse rounded-2xl border border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-white/3"
-                />
-              ))}
-            </div>
+            <SkeletonJobCardGrid count={3} />
           ) : jobs.length === 0 ? (
             <div className="rounded-2xl border border-gray-200 bg-white p-8 text-center dark:border-gray-800 dark:bg-white/3">
               <p className="text-theme-sm text-gray-500 dark:text-gray-400">

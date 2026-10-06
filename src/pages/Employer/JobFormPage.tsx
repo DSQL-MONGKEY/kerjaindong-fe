@@ -1,5 +1,6 @@
 import PageBreadCrumb from "@/components/common/PageBreadCrumb";
 import PageMeta from "@/components/common/PageMeta";
+import { SkeletonForm } from "@/components/ui/skeleton/Skeleton";
 import JobForm, {
   type JobFormInitial,
 } from "@/components/employer/JobForm";
@@ -25,9 +26,7 @@ export default function EmployerJobFormPage() {
   const updateMutation = useUpdateJob(id);
 
   if (companyQuery.isPending || (isEdit && managedQuery.isPending)) {
-    return (
-      <div className="h-64 animate-pulse rounded-2xl bg-gray-50 dark:bg-white/3" />
-    );
+    return <SkeletonForm fields={6} />;
   }
 
   if (!companyQuery.data) {

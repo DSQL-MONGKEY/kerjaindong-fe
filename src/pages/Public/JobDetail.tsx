@@ -1,5 +1,8 @@
 import { JobBadges } from "@/components/jobs/JobBadges";
 import PageMeta from "@/components/common/PageMeta";
+import Skeleton, {
+  SkeletonText,
+} from "@/components/ui/skeleton/Skeleton";
 import ApplyDialog from "@/components/seeker/ApplyDialog";
 import SaveJobButton from "@/components/seeker/SaveJobButton";
 import { useAuth } from "@/context/AuthContext";
@@ -21,7 +24,35 @@ export default function JobDetail() {
   if (query.isPending) {
     return (
       <div className="mx-auto w-full max-w-(--breakpoint-2xl) px-4 py-10 md:px-6">
-        <div className="h-64 animate-pulse rounded-2xl border border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-white/3" />
+        <Skeleton className="mb-6 h-4 w-24" />
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+          <div className="space-y-6 lg:col-span-2">
+            <div className="rounded-2xl border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-white/3">
+              <Skeleton className="h-6 w-2/3" />
+              <Skeleton className="mt-2.5 h-4 w-1/3" />
+              <div className="mt-4 flex flex-wrap gap-2">
+                <Skeleton className="h-6 w-20 rounded-full" />
+                <Skeleton className="h-6 w-24 rounded-full" />
+                <Skeleton className="h-6 w-16 rounded-full" />
+              </div>
+              <SkeletonText lines={2} className="mt-4" />
+            </div>
+            <div className="rounded-2xl border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-white/3">
+              <Skeleton className="h-4 w-36" />
+              <SkeletonText lines={4} className="mt-4" />
+            </div>
+          </div>
+          <aside>
+            <div className="rounded-2xl border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-white/3">
+              <Skeleton className="h-3.5 w-20" />
+              <Skeleton className="mt-2 h-4 w-32" />
+              <Skeleton className="mt-4 h-3.5 w-20" />
+              <Skeleton className="mt-2 h-4 w-40" />
+              <Skeleton className="mt-5 h-10 w-full rounded-lg" />
+              <Skeleton className="mt-3 h-10 w-full rounded-lg" />
+            </div>
+          </aside>
+        </div>
       </div>
     );
   }

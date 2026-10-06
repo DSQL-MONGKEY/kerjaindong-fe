@@ -1,6 +1,7 @@
 import PageBreadCrumb from "@/components/common/PageBreadCrumb";
 import PageMeta from "@/components/common/PageMeta";
 import SimplePagination from "@/components/common/SimplePagination";
+import { SkeletonJobCardGrid } from "@/components/ui/skeleton/Skeleton";
 import JobCard from "@/components/jobs/JobCard";
 import { useSavedJobs, useUnsaveJob } from "@/hooks/useEngagement";
 import { useState } from "react";
@@ -25,7 +26,7 @@ export default function SeekerSavedJobsPage() {
       <PageBreadCrumb pageTitle={t("seeker.saved.title")} />
 
       {query.isPending ? (
-        <div className="h-40 animate-pulse rounded-2xl bg-gray-50 dark:bg-white/3" />
+        <SkeletonJobCardGrid count={6} />
       ) : jobs.length === 0 ? (
         <div className="rounded-2xl border border-gray-200 bg-white p-10 text-center dark:border-gray-800 dark:bg-white/3">
           <p className="text-theme-sm text-gray-500 dark:text-gray-400">

@@ -1,5 +1,6 @@
 import GridShape from "@/components/common/GridShape";
 import PageMeta from "@/components/common/PageMeta";
+import { homePathForRoles, useAuth } from "@/context/AuthContext";
 import { cn } from "@/utils";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
@@ -10,6 +11,7 @@ interface NotFoundProps {
 
 export default function NotFound({ className }: NotFoundProps) {
   const { t } = useTranslation();
+  const { user } = useAuth();
 
   return (
     <>
@@ -41,12 +43,12 @@ export default function NotFound({ className }: NotFoundProps) {
           </p>
 
           <Link
-            to="/"
+            to={user ? homePathForRoles(user.roles) : "/"}
             className={cn(
               "inline-flex items-center justify-center rounded-lg border border-gray-300 bg-white px-5 py-3.5 text-sm font-medium text-gray-700 shadow-theme-xs hover:bg-gray-50 hover:text-gray-800 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-white/3 dark:hover:text-gray-200",
             )}
           >
-            {t("notFound.backHome")}
+            {user ? t("notFound.backToDashboard") : t("notFound.backHome")}
           </Link>
         </div>
         <p

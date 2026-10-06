@@ -1,6 +1,7 @@
 import PageBreadCrumb from "@/components/common/PageBreadCrumb";
 import PageMeta from "@/components/common/PageMeta";
 import SimplePagination from "@/components/common/SimplePagination";
+import { SkeletonListCard } from "@/components/ui/skeleton/Skeleton";
 import JobStatusActions from "@/components/employer/JobStatusActions";
 import { JobStatusBadge } from "@/components/employer/StatusBadges";
 import { useCompanyJobsList, useMyCompany } from "@/hooks/useEmployer";
@@ -29,9 +30,7 @@ export default function EmployerJobsPage() {
   const meta = jobsQuery.data?.meta;
 
   if (companyQuery.isPending) {
-    return (
-      <div className="h-40 animate-pulse rounded-2xl bg-gray-50 dark:bg-white/3" />
-    );
+    return <SkeletonListCard rows={3} />;
   }
 
   if (!companyQuery.data) {
@@ -109,7 +108,7 @@ export default function EmployerJobsPage() {
       </div>
 
       {jobsQuery.isPending ? (
-        <div className="h-40 animate-pulse rounded-2xl bg-gray-50 dark:bg-white/3" />
+        <SkeletonListCard rows={3} />
       ) : jobs.length === 0 ? (
         <div className="rounded-2xl border border-gray-200 bg-white p-10 text-center dark:border-gray-800 dark:bg-white/3">
           <p className="text-theme-sm text-gray-500 dark:text-gray-400">

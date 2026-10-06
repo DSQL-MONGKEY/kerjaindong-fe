@@ -1,5 +1,9 @@
 import PageBreadCrumb from "@/components/common/PageBreadCrumb";
 import PageMeta from "@/components/common/PageMeta";
+import Skeleton, {
+  SkeletonDetail,
+  SkeletonText,
+} from "@/components/ui/skeleton/Skeleton";
 import ApplicationStatusBadge from "@/components/seeker/ApplicationStatusBadge";
 import ApplicationTimeline from "@/components/seeker/ApplicationTimeline";
 import { useApplicationDetail, useWithdrawApplication } from "@/hooks/useApplications";
@@ -20,7 +24,21 @@ export default function SeekerApplicationDetailPage() {
 
   if (query.isPending) {
     return (
-      <div className="h-64 animate-pulse rounded-2xl bg-gray-50 dark:bg-white/3" />
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+        <div className="space-y-6 lg:col-span-2">
+          <SkeletonDetail />
+          <div className="rounded-2xl border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-white/3">
+            <Skeleton className="h-4 w-36" />
+            <SkeletonText lines={3} className="mt-5" />
+          </div>
+        </div>
+        <aside>
+          <div className="rounded-2xl border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-white/3">
+            <Skeleton className="h-3.5 w-24" />
+            <Skeleton className="mt-3 h-10 w-full rounded-lg" />
+          </div>
+        </aside>
+      </div>
     );
   }
 

@@ -1,5 +1,6 @@
 import PageBreadCrumb from "@/components/common/PageBreadCrumb";
 import PageMeta from "@/components/common/PageMeta";
+import { SkeletonStatCards } from "@/components/ui/skeleton/Skeleton";
 import { useAuth } from "@/context/AuthContext";
 import { useMyApplications } from "@/hooks/useApplications";
 import { useFollowedCompanies, useSavedJobs } from "@/hooks/useEngagement";
@@ -31,6 +32,9 @@ export default function SeekerDashboard() {
     },
   ];
 
+  const statsLoading =
+    applicationsQuery.isPending || savedQuery.isPending || followedQuery.isPending;
+
   return (
     <>
       <PageMeta
@@ -53,22 +57,26 @@ export default function SeekerDashboard() {
         </div>
       ) : null}
 
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-        {stats.map((stat) => (
-          <Link
-            key={stat.label}
-            to={stat.path}
-            className="rounded-2xl border border-gray-200 bg-white p-5 transition hover:border-brand-300 dark:border-gray-800 dark:bg-white/3 dark:hover:border-brand-800"
-          >
-            <p className="text-title-sm font-bold text-gray-900 dark:text-white">
-              {stat.value}
-            </p>
-            <p className="mt-1 text-theme-sm text-gray-500 dark:text-gray-400">
-              {stat.label}
-            </p>
-          </Link>
-        ))}
-      </div>
+      {statsLoading ? (
+        <SkeletonStatCards />
+      ) : (
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+          {stats.map((stat) => (
+            <Link
+              key={stat.label}
+              to={stat.path}
+              className="rounded-2xl border border-gray-200 bg-white p-5 transition hover:border-brand-300 dark:border-gray-800 dark:bg-white/3 dark:hover:border-brand-800"
+            >
+              <p className="text-title-sm font-bold text-gray-900 dark:text-white">
+                {stat.value}
+              </p>
+              <p className="mt-1 text-theme-sm text-gray-500 dark:text-gray-400">
+                {stat.label}
+              </p>
+            </Link>
+          ))}
+        </div>
+      )}
 
       <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
         <Link

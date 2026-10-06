@@ -1,4 +1,5 @@
 import PageMeta from "@/components/common/PageMeta";
+import { SkeletonJobCardGrid } from "@/components/ui/skeleton/Skeleton";
 import JobCard from "@/components/jobs/JobCard";
 import JobFilters, {
   type JobFilterState,
@@ -21,12 +22,6 @@ const EMPLOYMENT_TYPES = new Set<EmploymentType>([
 ]);
 
 const WORK_MODES = new Set<WorkMode>(["ONSITE", "REMOTE", "HYBRID"]);
-
-function JobCardSkeleton() {
-  return (
-    <div className="h-44 animate-pulse rounded-2xl border border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-white/3" />
-  );
-}
 
 export default function Jobs() {
   const { t } = useTranslation();
@@ -101,11 +96,7 @@ export default function Jobs() {
 
         <div className="mt-8">
           {query.isPending ? (
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
-              {Array.from({ length: 6 }).map((_, index) => (
-                <JobCardSkeleton key={index} />
-              ))}
-            </div>
+            <SkeletonJobCardGrid count={6} />
           ) : query.isError ? (
             <div className="rounded-2xl border border-error-200 bg-error-50 p-6 text-center dark:border-error-500/30 dark:bg-error-500/10">
               <p className="text-theme-sm text-error-600 dark:text-error-400">

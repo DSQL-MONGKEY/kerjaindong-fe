@@ -1,5 +1,8 @@
 import PageBreadCrumb from "@/components/common/PageBreadCrumb";
 import PageMeta from "@/components/common/PageMeta";
+import Skeleton, {
+  SkeletonText,
+} from "@/components/ui/skeleton/Skeleton";
 import { ApiError } from "@/lib/http";
 import type { Resume } from "@/lib/seeker-types";
 import {
@@ -174,7 +177,21 @@ export default function SeekerResumesPage() {
       ) : null}
 
       {resumesQuery.isPending ? (
-        <div className="h-40 animate-pulse rounded-2xl bg-gray-50 dark:bg-white/3" />
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+          {Array.from({ length: 4 }).map((_, index) => (
+            <div
+              key={index}
+              className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/3"
+            >
+              <Skeleton className="h-4 w-1/2" />
+              <SkeletonText lines={2} className="mt-3" />
+              <div className="mt-4 flex gap-2">
+                <Skeleton className="h-8 w-24 rounded-lg" />
+                <Skeleton className="h-8 w-16 rounded-lg" />
+              </div>
+            </div>
+          ))}
+        </div>
       ) : resumes.length === 0 ? (
         <div className="rounded-2xl border border-gray-200 bg-white p-10 text-center dark:border-gray-800 dark:bg-white/3">
           <p className="text-theme-sm text-gray-500 dark:text-gray-400">

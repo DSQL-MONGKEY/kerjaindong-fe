@@ -1,5 +1,6 @@
 import BrandMark from "@/components/common/BrandMark";
 import PageMeta from "@/components/common/PageMeta";
+import { SkeletonJobCardGrid } from "@/components/ui/skeleton/Skeleton";
 import JobCard from "@/components/jobs/JobCard";
 import { useAuth } from "@/context/AuthContext";
 import { usePublicJobs } from "@/hooks/useJobs";
@@ -65,14 +66,7 @@ export default function Home() {
         </div>
 
         {query.isPending ? (
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
-            {Array.from({ length: 3 }).map((_, index) => (
-              <div
-                key={index}
-                className="h-44 animate-pulse rounded-2xl border border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-white/3"
-              />
-            ))}
-          </div>
+          <SkeletonJobCardGrid count={3} />
         ) : jobs.length === 0 ? (
           <div className="rounded-2xl border border-gray-200 bg-white p-8 text-center dark:border-gray-800 dark:bg-white/3">
             <p className="text-theme-sm text-gray-500 dark:text-gray-400">

@@ -555,6 +555,7 @@
     "metaTitle": "Page Not Found | Kerjaindong",
     "metaDescription": "The page you are looking for was not found.",
     "message": "We can't seem to find the page you're looking for.",
-    "backHome": "Back to Home"
+    "backHome": "Back to Home",
+    "backToDashboard": "Back to Dashboard"
   }
 }

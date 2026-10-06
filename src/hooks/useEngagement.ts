@@ -41,13 +41,14 @@ export function useUnsaveJob() {
   });
 }
 
-export function useFollowedCompanies(page = 1) {
+export function useFollowedCompanies(page = 1, perPage = 10, enabled = true) {
   return useQuery({
-    queryKey: [...FOLLOWED_KEY, { page }],
+    queryKey: [...FOLLOWED_KEY, { page, perPage }],
     queryFn: () =>
       api.get<PaginatedResult<FollowedCompanyItem>>("/followed-companies", {
-        query: { page, perPage: 10 },
+        query: { page, perPage },
       }),
+    enabled,
   });
 }
 

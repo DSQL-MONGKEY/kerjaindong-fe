@@ -1,6 +1,7 @@
 import PageBreadCrumb from "@/components/common/PageBreadCrumb";
 import PageMeta from "@/components/common/PageMeta";
 import SimplePagination from "@/components/common/SimplePagination";
+import { SkeletonListCard } from "@/components/ui/skeleton/Skeleton";
 import AdminActionDialog from "@/components/admin/AdminActionDialog";
 import { useAdminUsers, useUpdateUserStatus } from "@/hooks/useAdmin";
 import { ApiError } from "@/lib/http";
@@ -76,7 +77,7 @@ export default function AdminUsersPage() {
       </form>
 
       {query.isPending ? (
-        <div className="h-40 animate-pulse rounded-2xl bg-gray-50 dark:bg-white/3" />
+        <SkeletonListCard rows={5} />
       ) : users.length === 0 ? (
         <div className="rounded-2xl border border-gray-200 bg-white p-10 text-center dark:border-gray-800 dark:bg-white/3">
           <p className="text-theme-sm text-gray-500 dark:text-gray-400">

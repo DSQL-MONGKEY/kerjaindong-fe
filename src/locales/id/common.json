@@ -555,6 +555,7 @@
     "metaTitle": "Halaman Tidak Ditemukan | Kerjaindong",
     "metaDescription": "Halaman yang Anda cari tidak ditemukan.",
     "message": "Kami tidak dapat menemukan halaman yang Anda cari.",
-    "backHome": "Kembali ke Beranda"
+    "backHome": "Kembali ke Beranda",
+    "backToDashboard": "Kembali ke Dashboard"
   }
 }

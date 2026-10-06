@@ -1,5 +1,9 @@
 import PageBreadCrumb from "@/components/common/PageBreadCrumb";
 import PageMeta from "@/components/common/PageMeta";
+import {
+  SkeletonListCard,
+  SkeletonRows,
+} from "@/components/ui/skeleton/Skeleton";
 import { useAuth } from "@/context/AuthContext";
 import {
   useCreateInvitation,
@@ -33,9 +37,7 @@ export default function EmployerMembersPage() {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   if (companyQuery.isPending) {
-    return (
-      <div className="h-40 animate-pulse rounded-2xl bg-gray-50 dark:bg-white/3" />
-    );
+    return <SkeletonListCard rows={3} />;
   }
 
   if (!company) {
@@ -92,47 +94,51 @@ export default function EmployerMembersPage() {
           </h2>
 
           <div className="space-y-3">
-            {members.map((member) => (
-              <div
-                key={member.id}
-                className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-gray-100 p-4 dark:border-gray-800"
-              >
-                <div>
-                  <div className="flex items-center gap-2">
-                    <p className="text-theme-sm font-semibold text-gray-800 dark:text-gray-200">
-                      {[member.firstName, member.lastName]
-                        .filter(Boolean)
-                        .join(" ")}
-                    </p>
-                    <span className="rounded-full bg-gray-100 px-2.5 py-0.5 text-theme-xs font-medium text-gray-600 dark:bg-white/5 dark:text-gray-400">
-                      {t(`employer.roles.${member.companyRole}`)}
-                    </span>
-                    {!member.isActive ? (
-                      <span className="rounded-full bg-error-50 px-2.5 py-0.5 text-theme-xs font-medium text-error-600 dark:bg-error-500/15 dark:text-error-400">
-                        {t("employer.members.inactive")}
+            {membersQuery.isPending ? (
+              <SkeletonRows rows={3} />
+            ) : (
+              members.map((member) => (
+                <div
+                  key={member.id}
+                  className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-gray-100 p-4 dark:border-gray-800"
+                >
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <p className="text-theme-sm font-semibold text-gray-800 dark:text-gray-200">
+                        {[member.firstName, member.lastName]
+                          .filter(Boolean)
+                          .join(" ")}
+                      </p>
+                      <span className="rounded-full bg-gray-100 px-2.5 py-0.5 text-theme-xs font-medium text-gray-600 dark:bg-white/5 dark:text-gray-400">
+                        {t(`employer.roles.${member.companyRole}`)}
                       </span>
-                    ) : null}
+                      {!member.isActive ? (
+                        <span className="rounded-full bg-error-50 px-2.5 py-0.5 text-theme-xs font-medium text-error-600 dark:bg-error-500/15 dark:text-error-400">
+                          {t("employer.members.inactive")}
+                        </span>
+                      ) : null}
+                    </div>
+                    <p className="mt-0.5 text-theme-xs text-gray-500 dark:text-gray-400">
+                      {member.user.email}
+                      {member.position ? ` · ${member.position}` : ""}
+                    </p>
                   </div>
-                  <p className="mt-0.5 text-theme-xs text-gray-500 dark:text-gray-400">
-                    {member.user.email}
-                    {member.position ? ` · ${member.position}` : ""}
-                  </p>
-                </div>
 
-                {canManage &&
-                member.companyRole !== "OWNER" &&
-                member.userId !== user?.id &&
-                member.isActive ? (
-                  <button
-                    type="button"
-                    onClick={() => void handleRemove(member.userId)}
-                    className="rounded-lg border border-error-300 px-3 py-2 text-theme-xs font-medium text-error-600 transition hover:bg-error-50 dark:border-error-500/40 dark:text-error-400"
-                  >
-                    {t("employer.members.remove")}
-                  </button>
-                ) : null}
-              </div>
-            ))}
+                  {canManage &&
+                  member.companyRole !== "OWNER" &&
+                  member.userId !== user?.id &&
+                  member.isActive ? (
+                    <button
+                      type="button"
+                      onClick={() => void handleRemove(member.userId)}
+                      className="rounded-lg border border-error-300 px-3 py-2 text-theme-xs font-medium text-error-600 transition hover:bg-error-50 dark:border-error-500/40 dark:text-error-400"
+                    >
+                      {t("employer.members.remove")}
+                    </button>
+                  ) : null}
+                </div>
+              ))
+            )}
           </div>
         </div>
 
@@ -212,7 +218,14 @@ export default function EmployerMembersPage() {
               </div>
             ) : null}
 
-            {invitations.length > 0 ? (
+            {invitationsQuery.isPending ? (
+              <div className="mt-6">
+                <h3 className="mb-3 text-theme-sm font-semibold text-gray-800 dark:text-gray-200">
+                  {t("employer.members.invitationsTitle")}
+                </h3>
+                <SkeletonRows rows={2} />
+              </div>
+            ) : invitations.length > 0 ? (
               <div className="mt-6">
                 <h3 className="mb-3 text-theme-sm font-semibold text-gray-800 dark:text-gray-200">
                   {t("employer.members.invitationsTitle")}

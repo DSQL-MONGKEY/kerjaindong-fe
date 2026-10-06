@@ -1,4 +1,5 @@
 import PageMeta from "@/components/common/PageMeta";
+import { SkeletonDetail } from "@/components/ui/skeleton/Skeleton";
 import { useAuth } from "@/context/AuthContext";
 import {
   useAcceptInvitation,
@@ -44,7 +45,7 @@ export default function AcceptInvitationPage() {
       <div className="mx-auto flex min-h-[60vh] w-full max-w-lg flex-col justify-center px-4 py-16">
         <div className="rounded-2xl border border-gray-200 bg-white p-8 text-center dark:border-gray-800 dark:bg-white/3">
           {previewQuery.isPending ? (
-            <div className="h-40 animate-pulse rounded-xl bg-gray-50 dark:bg-white/3" />
+            <SkeletonDetail />
           ) : previewQuery.isError || !previewQuery.data ? (
             <>
               <h1 className="text-title-sm font-bold text-gray-900 dark:text-white">
