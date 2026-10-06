@@ -1,54 +1,43 @@
 import type React from "react";
 import { createContext, useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { defaultLocale, getLanguage, languages, type Locale } from "@/i18n/languages";
 
-export type LanguageCode = "en" | "ar" | "es" | "de";
-
-export type Language = {
-  code: LanguageCode;
-  name: string;
-  dir: "ltr" | "rtl";
-  flag?: string;
-};
-
-export const AVAILABLE_LANGUAGES: Language[] = [
-  { code: "en", name: "English", dir: "ltr" },
-  { code: "ar", name: "العربية", dir: "rtl" },
-  { code: "es", name: "Español", dir: "ltr" },
-  { code: "de", name: "Deutsch", dir: "ltr" },
-];
+export type LanguageCode = Locale;
 
 type LanguageContextType = {
-  language: LanguageCode;
-  currentLanguage: Language;
+  language: Locale;
+  currentLanguage: ReturnType<typeof getLanguage>;
   dir: "ltr" | "rtl";
-  setLanguage: (code: LanguageCode) => void;
-  availableLanguages: Language[];
+  setLanguage: (code: Locale) => void;
+  availableLanguages: typeof languages;
 };
 
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+const LanguageContext = createContext<LanguageContextType | undefined>(
+  undefined,
+);
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   const { i18n } = useTranslation();
-  const [language, setLanguageState] = useState<LanguageCode>(() => {
-    const currentLng = (i18n.resolvedLanguage || i18n.language || "en") as LanguageCode;
-    return AVAILABLE_LANGUAGES.some((lang) => lang.code === currentLng)
-      ? currentLng
-      : "en";
+  const [language, setLanguageState] = useState<Locale>(() => {
+    const current = (i18n.resolvedLanguage ||
+      i18n.language ||
+      defaultLocale) as Locale;
+    return languages.some((lang) => lang.id === current)
+      ? current
+      : defaultLocale;
   });
 
-  const currentLanguage =
-    AVAILABLE_LANGUAGES.find((lang) => lang.code === language) ||
-    AVAILABLE_LANGUAGES[0];
+  const currentLanguage = getLanguage(language);
   const dir = currentLanguage.dir;
 
   useEffect(() => {
     const handleLanguageChanged = (lng: string) => {
-      const matched = AVAILABLE_LANGUAGES.find((l) => l.code === lng);
-      if (matched && matched.code !== language) {
-        setLanguageState(matched.code);
+      const matched = languages.find((l) => l.id === lng);
+      if (matched && matched.id !== language) {
+        setLanguageState(matched.id);
       }
     };
 
@@ -65,8 +54,8 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({
     localStorage.setItem("language", language);
   }, [language, dir]);
 
-  const setLanguage = (code: LanguageCode) => {
-    i18n.changeLanguage(code);
+  const setLanguage = (code: Locale) => {
+    void i18n.changeLanguage(code);
     setLanguageState(code);
   };
 
@@ -77,7 +66,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({
         currentLanguage,
         dir,
         setLanguage,
-        availableLanguages: AVAILABLE_LANGUAGES,
+        availableLanguages: languages,
       }}
     >
       {children}

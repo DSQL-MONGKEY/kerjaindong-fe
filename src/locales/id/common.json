@@ -1,0 +1,560 @@
+{
+  "brand": {
+    "tagline": "Portal lowongan kerja untuk pencari kerja dan perusahaan Indonesia"
+  },
+  "common": {
+    "home": "Beranda",
+    "loading": "Memuat...",
+    "save": "Simpan",
+    "cancel": "Batal",
+    "retry": "Coba lagi",
+    "seeAll": "Lihat semua",
+    "edit": "Ubah",
+    "delete": "Hapus",
+    "previous": "Sebelumnya",
+    "next": "Berikutnya",
+    "pageOf": "Halaman {page} dari {total}",
+    "skipToContent": "Lewati ke konten utama",
+    "comingSoon": "Fitur ini segera hadir"
+  },
+  "errors": {
+    "generic": "Terjadi kesalahan. Silakan coba lagi."
+  },
+  "sidebar": {
+    "groups": {
+      "menu": "Menu",
+      "others": "Lainnya"
+    },
+    "items": {
+      "home": "Beranda",
+      "dashboard": "Dashboard",
+      "employerDashboard": "Perusahaan",
+      "adminDashboard": "Admin",
+      "seekerOverview": "Ringkasan",
+      "seekerProfile": "Profil",
+      "seekerResumes": "Resume",
+      "seekerApplications": "Lamaran",
+      "seekerSaved": "Tersimpan",
+      "seekerFollowed": "Diikuti",
+      "employerOverview": "Ringkasan",
+      "employerCompany": "Profil",
+      "employerJobs": "Lowongan",
+      "employerMembers": "Anggota",
+      "adminCompanies": "Perusahaan",
+      "adminUsers": "Pengguna",
+      "adminJobs": "Lowongan",
+      "adminAudit": "Audit Log"
+    },
+    "badges": {
+      "new": "baru",
+      "pro": "pro"
+    }
+  },
+  "header": {
+    "searchPlaceholder": "Cari lowongan...",
+    "toggleSidebar": "Buka atau tutup menu",
+    "notifications": "Notifikasi"
+  },
+  "publicHeader": {
+    "home": "Beranda",
+    "jobs": "Lowongan",
+    "dashboard": "Dashboard",
+    "signIn": "Masuk",
+    "signUp": "Daftar"
+  },
+  "userDropdown": {
+    "name": "Pengguna",
+    "email": "belum masuk",
+    "dashboard": "Dashboard saya",
+    "language": "Bahasa",
+    "signOut": "Keluar"
+  },
+  "home": {
+    "metaTitle": "Kerjaindong — Portal Lowongan Kerja",
+    "metaDescription": "Cari lowongan kerja terbaru dari perusahaan terverifikasi di seluruh Indonesia.",
+    "heroTitle": "Temukan pekerjaan yang tepat untuk Anda",
+    "heroSubtitle": "Kerjaindong menghubungkan pencari kerja dengan perusahaan Indonesia. Buat profil, lamar lowongan, dan pantau status lamaran dalam satu tempat.",
+    "ctaBrowseJobs": "Lihat Lowongan",
+    "ctaSignIn": "Masuk",
+    "ctaSignUp": "Daftar",
+    "latestJobs": "Lowongan Terbaru",
+    "noJobs": "Belum ada lowongan yang dipublikasikan.",
+    "employerCtaTitle": "Sedang mencari kandidat terbaik?",
+    "employerCtaSubtitle": "Pasang lowongan di Kerjaindong dan kelola pelamar dalam satu dashboard.",
+    "employerCtaButton": "Daftar sebagai Perusahaan",
+    "note": "Daftar lowongan dan profil perusahaan segera hadir."
+  },
+  "jobs": {
+    "metaTitle": "Lowongan Kerja | Kerjaindong",
+    "metaDescription": "Jelajahi lowongan kerja terbaru dari perusahaan Indonesia berdasarkan kota, tipe pekerjaan, dan gaji.",
+    "heading": "Lowongan Kerja",
+    "subheading": "Temukan lowongan dari perusahaan Indonesia dan lamar langsung.",
+    "searchPlaceholder": "Cari posisi atau perusahaan...",
+    "resultCount": "{count} lowongan ditemukan",
+    "loadMore": "Muat lebih banyak",
+    "empty": "Tidak ada lowongan yang cocok dengan filter Anda.",
+    "emptyHint": "Coba ubah kata kunci atau reset filter.",
+    "error": "Gagal memuat daftar lowongan.",
+    "salaryNegotiable": "Gaji tidak ditampilkan",
+    "remoteLocation": "Lokasi tidak ditentukan",
+    "filters": {
+      "keyword": "Kata kunci",
+      "province": "Provinsi",
+      "allProvinces": "Semua provinsi",
+      "city": "Kota/Kabupaten",
+      "allCities": "Semua kota",
+      "employmentType": "Tipe Pekerjaan",
+      "allEmploymentTypes": "Semua tipe",
+      "workMode": "Mode Kerja",
+      "allWorkModes": "Semua mode",
+      "salaryMin": "Gaji minimum",
+      "salaryMinPlaceholder": "cth. 5000000",
+      "apply": "Terapkan",
+      "reset": "Reset"
+    },
+    "employmentType": {
+      "FULL_TIME": "Penuh Waktu",
+      "PART_TIME": "Paruh Waktu",
+      "CONTRACT": "Kontrak",
+      "INTERNSHIP": "Magang",
+      "FREELANCE": "Lepas"
+    },
+    "workMode": {
+      "ONSITE": "Di Kantor",
+      "REMOTE": "Remote",
+      "HYBRID": "Hybrid"
+    },
+    "experienceLevel": {
+      "ENTRY": "Pemula",
+      "JUNIOR": "Junior",
+      "MID": "Menengah",
+      "SENIOR": "Senior",
+      "LEAD": "Lead"
+    },
+    "salaryPeriod": {
+      "HOURLY": "/jam",
+      "DAILY": "/hari",
+      "MONTHLY": "/bulan",
+      "YEARLY": "/tahun"
+    },
+    "detail": {
+      "notFoundTitle": "Lowongan Tidak Ditemukan",
+      "notFoundMessage": "Lowongan ini mungkin sudah ditutup atau kedaluwarsa.",
+      "backToList": "Kembali ke daftar lowongan",
+      "description": "Deskripsi Pekerjaan",
+      "requirements": "Kualifikasi",
+      "benefits": "Benefit",
+      "posted": "Diposting {date}",
+      "views": "{count} dilihat",
+      "applicants": "{count} pelamar",
+      "salary": "Gaji",
+      "location": "Lokasi",
+      "deadline": "Batas lamaran",
+      "aboutCompany": "Lihat profil perusahaan",
+      "apply": "Lamar Sekarang",
+      "applySignIn": "Masuk untuk Melamar",
+      "applySeekerOnly": "Hanya untuk pencari kerja"
+    }
+  },
+  "company": {
+    "verified": "Terverifikasi",
+    "follow": "Ikuti",
+    "unfollow": "Berhenti Ikuti",
+    "jobs": "Lowongan dari perusahaan ini",
+    "noJobs": "Belum ada lowongan aktif dari perusahaan ini.",
+    "website": "Situs Web",
+    "metaDescription": "Profil perusahaan {name} di Kerjaindong.",
+    "notFound": "Perusahaan Tidak Ditemukan",
+    "joinedAt": "Bergabung sejak {date}"
+  },
+  "seeker": {
+    "dashboard": {
+      "metaTitle": "Dashboard Pencari Kerja | Kerjaindong",
+      "metaDescription": "Ringkasan lamaran, lowongan tersimpan, dan perusahaan yang Anda ikuti.",
+      "title": "Dashboard Pencari Kerja",
+      "totalApplications": "Total Lamaran",
+      "totalSaved": "Lowongan Tersimpan",
+      "totalFollowed": "Perusahaan Diikuti",
+      "profileIncomplete": "Profil pencari kerja Anda belum lengkap. Lengkapi agar bisa melamar lowongan.",
+      "completeProfile": "Lengkapi Profil",
+      "browseJobs": "Cari Lowongan",
+      "browseJobsHint": "Jelajahi lowongan terbaru dari perusahaan Indonesia.",
+      "manageResumes": "Kelola Resume",
+      "manageResumesHint": "Buat dan atur resume utama yang dipakai saat melamar."
+    },
+    "profile": {
+      "metaTitle": "Profil Pencari Kerja | Kerjaindong",
+      "metaDescription": "Lengkapi profil pencari kerja Anda agar mudah ditemukan perusahaan.",
+      "title": "Profil Pencari Kerja",
+      "firstName": "Nama depan",
+      "lastName": "Nama belakang",
+      "headline": "Headline",
+      "headlinePlaceholder": "cth. Backend Engineer",
+      "summary": "Ringkasan",
+      "summaryPlaceholder": "Ceritakan singkat tentang pengalaman dan keahlian Anda",
+      "phone": "Nomor telepon",
+      "expectedSalary": "Ekspektasi gaji (bulan)",
+      "province": "Provinsi",
+      "provincePlaceholder": "Pilih provinsi",
+      "city": "Kota/Kabupaten",
+      "cityPlaceholder": "Pilih kota/kabupaten",
+      "openToWork": "Terbuka untuk kesempatan kerja",
+      "save": "Simpan Perubahan",
+      "create": "Simpan Profil",
+      "saved": "Profil berhasil disimpan.",
+      "loadError": "Gagal memuat profil. Coba muat ulang halaman."
+    },
+    "resumes": {
+      "metaTitle": "Resume | Kerjaindong",
+      "metaDescription": "Kelola resume yang dipakai saat melamar lowongan.",
+      "title": "Resume",
+      "add": "Tambah Resume",
+      "formTitle": "Judul resume",
+      "formSummary": "Ringkasan",
+      "formPrimary": "Jadikan resume utama",
+      "primary": "Utama",
+      "setPrimary": "Jadikan Utama",
+      "empty": "Belum ada resume. Tambahkan resume pertama Anda.",
+      "titleRequired": "Judul resume wajib diisi",
+      "confirmDelete": "Hapus resume ini?"
+    },
+    "applications": {
+      "metaTitle": "Lamaran Saya | Kerjaindong",
+      "metaDescription": "Pantau status lamaran kerja Anda.",
+      "title": "Lamaran Saya",
+      "detailTitle": "Detail Lamaran",
+      "detailNotFound": "Lamaran tidak ditemukan.",
+      "backToList": "Kembali ke daftar lamaran",
+      "allStatuses": "Semua",
+      "empty": "Belum ada lamaran. Mulai cari lowongan yang cocok.",
+      "appliedAt": "Dilamar {date}",
+      "appliedAtLabel": "Tanggal lamar",
+      "lastUpdate": "Pembaruan terakhir",
+      "coverLetter": "Surat lamaran",
+      "withdraw": "Batalkan Lamaran",
+      "confirmWithdraw": "Batalkan lamaran ini? Tindakan ini tidak dapat dibatalkan.",
+      "timeline": "Riwayat Status",
+      "timelineCreated": "Lamaran dibuat dengan status {status}",
+      "timelineChanged": "Status berubah dari {from} menjadi {to}",
+      "jobInfo": "Informasi Lowongan",
+      "viewJob": "Lihat Lowongan",
+      "status": {
+        "APPLIED": "Dilamar",
+        "REVIEWING": "Ditinjau",
+        "SHORTLISTED": "Shortlist",
+        "ACCEPTED": "Diterima",
+        "REJECTED": "Ditolak",
+        "WITHDRAWN": "Dibatalkan"
+      }
+    },
+    "apply": {
+      "title": "Lamar Lowongan",
+      "resumeLabel": "Resume",
+      "usePrimaryResume": "Gunakan resume utama: {title}",
+      "withoutResume": "Lamar tanpa resume",
+      "coverLetterLabel": "Surat lamaran (opsional)",
+      "coverLetterPlaceholder": "Tulis alasan Anda tertarik dengan posisi ini...",
+      "submit": "Kirim Lamaran",
+      "success": "Lamaran berhasil dikirim!",
+      "viewApplication": "Lihat Lamaran",
+      "profileRequired": "Anda perlu melengkapi profil pencari kerja sebelum melamar.",
+      "completeProfile": "Lengkapi Profil"
+    },
+    "saved": {
+      "metaTitle": "Lowongan Tersimpan | Kerjaindong",
+      "metaDescription": "Daftar lowongan yang Anda simpan.",
+      "title": "Lowongan Tersimpan",
+      "save": "Simpan Lowongan",
+      "unsave": "Hapus dari Simpanan",
+      "empty": "Belum ada lowongan tersimpan."
+    },
+    "followed": {
+      "metaTitle": "Perusahaan Diikuti | Kerjaindong",
+      "metaDescription": "Daftar perusahaan yang Anda ikuti.",
+      "title": "Perusahaan Diikuti",
+      "empty": "Belum mengikuti perusahaan mana pun."
+    },
+    "errors": {
+      "firstNameRequired": "Nama depan wajib diisi"
+    }
+  },
+  "employer": {
+    "roles": {
+      "OWNER": "Pemilik",
+      "ADMIN": "Admin",
+      "RECRUITER": "Recruiter"
+    },
+    "dashboard": {
+      "metaTitle": "Dashboard Perusahaan | Kerjaindong",
+      "metaDescription": "Kelola lowongan, pelamar, dan profil perusahaan.",
+      "title": "Dashboard Perusahaan",
+      "companyMissing": "Akun Anda belum terhubung ke perusahaan. Buat profil perusahaan untuk mulai memasang lowongan.",
+      "createCompany": "Buat Profil Perusahaan",
+      "signedInAs": "Masuk sebagai {role}",
+      "draftJobs": "Draft",
+      "publishedJobs": "Dipublikasikan",
+      "archivedJobs": "Diarsipkan",
+      "postJob": "Pasang Lowongan",
+      "postJobHint": "Buat lowongan baru dan publikasikan ke pencari kerja.",
+      "manageMembers": "Kelola Anggota",
+      "manageMembersHint": "Undang recruiter dan atur akses tim."
+    },
+    "company": {
+      "metaTitle": "Profil Perusahaan | Kerjaindong",
+      "metaDescription": "Lengkapi profil perusahaan Anda.",
+      "title": "Profil Perusahaan",
+      "name": "Nama perusahaan",
+      "nameRequired": "Nama perusahaan minimal 2 karakter",
+      "ownerNameRequired": "Nama depan Anda wajib diisi",
+      "industry": "Industri",
+      "website": "Situs web",
+      "description": "Deskripsi perusahaan",
+      "ownerFirstName": "Nama depan Anda",
+      "ownerLastName": "Nama belakang Anda",
+      "ownerPosition": "Posisi Anda",
+      "saved": "Profil perusahaan berhasil disimpan."
+    },
+    "jobs": {
+      "metaTitle": "Kelola Lowongan | Kerjaindong",
+      "metaDescription": "Kelola lowongan perusahaan Anda.",
+      "title": "Lowongan Saya",
+      "create": "Buat Lowongan",
+      "allStatuses": "Semua",
+      "empty": "Belum ada lowongan pada status ini.",
+      "meta": "{applications} pelamar · {views} dilihat · {date}",
+      "viewApplicants": "Lihat Pelamar",
+      "confirmArchive": "Arsipkan lowongan ini? Status arsip bersifat final.",
+      "confirmDelete": "Hapus lowongan draft ini?",
+      "status": {
+        "DRAFT": "Draft",
+        "PUBLISHED": "Dipublikasikan",
+        "PAUSED": "Dijeda",
+        "CLOSED": "Ditutup",
+        "ARCHIVED": "Diarsipkan"
+      },
+      "actions": {
+        "publish": "Publikasikan",
+        "pause": "Jeda",
+        "close": "Tutup",
+        "archive": "Arsipkan"
+      }
+    },
+    "jobForm": {
+      "metaTitle": "Form Lowongan | Kerjaindong",
+      "metaDescription": "Buat atau ubah detail lowongan.",
+      "title": "Buat Lowongan",
+      "editTitle": "Ubah Lowongan",
+      "titleRequired": "Judul minimal 3 karakter",
+      "descriptionRequired": "Deskripsi wajib diisi",
+      "typeRequired": "Tipe pekerjaan wajib dipilih",
+      "salaryInvalid": "Gaji maksimum tidak boleh lebih kecil dari gaji minimum",
+      "title": "Judul lowongan",
+      "description": "Deskripsi",
+      "requirements": "Kualifikasi",
+      "benefits": "Benefit",
+      "employmentType": "Tipe Pekerjaan",
+      "workMode": "Mode Kerja",
+      "experienceLevel": "Level Pengalaman",
+      "experienceLevelNone": "Tidak ditentukan",
+      "salaryMin": "Gaji minimum",
+      "salaryMax": "Gaji maksimum",
+      "salaryPeriod": "Periode gaji",
+      "expiresAt": "Batas lamaran",
+      "create": "Simpan sebagai Draft"
+    },
+    "applicants": {
+      "metaTitle": "Pelamar | Kerjaindong",
+      "metaDescription": "Kelola pelamar lowongan Anda.",
+      "title": "Pelamar",
+      "allStatuses": "Semua",
+      "empty": "Belum ada pelamar untuk lowongan ini.",
+      "appliedAt": "Melamar {date}",
+      "viewed": "Sudah dilihat",
+      "expectedSalary": "Ekspektasi gaji",
+      "update": "Ubah Status",
+      "updateTitle": "Ubah Status Pelamar",
+      "statusLabel": "Status",
+      "noteLabel": "Catatan (opsional)",
+      "status": {
+        "APPLIED": "Dilamar",
+        "REVIEWING": "Ditinjau",
+        "SHORTLISTED": "Shortlist",
+        "ACCEPTED": "Diterima",
+        "REJECTED": "Ditolak",
+        "WITHDRAWN": "Dibatalkan"
+      }
+    },
+    "members": {
+      "metaTitle": "Anggota Perusahaan | Kerjaindong",
+      "metaDescription": "Kelola anggota dan undangan perusahaan.",
+      "title": "Anggota Perusahaan",
+      "listTitle": "Daftar Anggota",
+      "inactive": "Nonaktif",
+      "remove": "Nonaktifkan",
+      "confirmRemove": "Nonaktifkan anggota ini?",
+      "inviteTitle": "Undang Anggota",
+      "email": "Email",
+      "emailRequired": "Email wajib diisi",
+      "role": "Role",
+      "invite": "Undang",
+      "tokenNotice": "Bagikan tautan undangan ini ke kandidat (email otomatis belum tersedia):",
+      "invitationsTitle": "Undangan",
+      "expiresAt": "Berlaku hingga {date}",
+      "invitationStatus": {
+        "PENDING": "Menunggu",
+        "ACCEPTED": "Diterima",
+        "EXPIRED": "Kedaluwarsa"
+      }
+    }
+  },
+  "invitation": {
+    "metaTitle": "Undangan Bergabung | Kerjaindong",
+    "metaDescription": "Terima undangan bergabung dengan perusahaan di Kerjaindong.",
+    "title": "Undangan bergabung dengan {company}",
+    "roleInfo": "Anda diundang sebagai {role}",
+    "forEmail": "Untuk {email}",
+    "expiresAt": "Berlaku hingga {date}",
+    "signInRequired": "Masuk dengan akun email yang diundang untuk menerima.",
+    "accept": "Terima Undangan",
+    "notFound": "Undangan Tidak Ditemukan",
+    "notFoundMessage": "Tautan undangan tidak valid atau sudah tidak berlaku.",
+    "status": {
+      "ACCEPTED": "Undangan ini sudah diterima.",
+      "EXPIRED": "Undangan ini sudah kedaluwarsa."
+    }
+  },
+  "admin": {
+    "searchPlaceholder": "Cari...",
+    "allVerifications": "Semua verifikasi",
+    "actionLabel": "Aksi",
+    "noteLabel": "Catatan (opsional)",
+    "noteRequired": "Catatan wajib diisi untuk aksi ini",
+    "verification": {
+      "UNVERIFIED": "Belum diverifikasi",
+      "PENDING": "Menunggu",
+      "VERIFIED": "Terverifikasi",
+      "REJECTED": "Ditolak"
+    },
+    "companies": {
+      "metaTitle": "Verifikasi Perusahaan | Kerjaindong",
+      "metaDescription": "Kelola verifikasi perusahaan.",
+      "title": "Perusahaan",
+      "empty": "Tidak ada perusahaan yang cocok.",
+      "meta": "{jobs} lowongan · {members} anggota · sejak {date}",
+      "verify": "Verifikasi",
+      "dialogTitle": "Verifikasi {name}"
+    },
+    "users": {
+      "metaTitle": "Kelola Pengguna | Kerjaindong",
+      "metaDescription": "Kelola status akun pengguna.",
+      "title": "Pengguna",
+      "searchPlaceholder": "Cari email, username, atau nama...",
+      "empty": "Tidak ada pengguna yang cocok.",
+      "active": "Aktif",
+      "inactive": "Nonaktif",
+      "joinedAt": "Bergabung {date}",
+      "manage": "Kelola",
+      "dialogTitle": "Kelola akun {name}",
+      "activate": "Aktifkan",
+      "deactivate": "Nonaktifkan"
+    },
+    "jobs": {
+      "metaTitle": "Moderasi Lowongan | Kerjaindong",
+      "metaDescription": "Moderasi lowongan yang tayang.",
+      "title": "Lowongan",
+      "searchPlaceholder": "Cari judul lowongan...",
+      "empty": "Tidak ada lowongan yang cocok.",
+      "meta": "{applications} pelamar · {views} dilihat · {date}",
+      "moderate": "Moderasi",
+      "dialogTitle": "Moderasi {title}"
+    },
+    "audit": {
+      "metaTitle": "Audit Log | Kerjaindong",
+      "metaDescription": "Jejak aksi moderasi admin.",
+      "title": "Audit Log",
+      "allEntities": "Semua entitas",
+      "empty": "Belum ada catatan audit.",
+      "entityTypes": {
+        "company": "Perusahaan",
+        "user": "Pengguna",
+        "job": "Lowongan"
+      },
+      "columns": {
+        "time": "Waktu",
+        "action": "Aksi",
+        "entity": "Entitas",
+        "actor": "Aktor"
+      }
+    }
+  },
+  "auth": {
+    "backHome": "Kembali ke beranda",
+    "fields": {
+      "emailOrUsername": "Email atau username",
+      "emailOrUsernamePlaceholder": "nama@email.com atau username",
+      "fullName": "Nama lengkap",
+      "fullNamePlaceholder": "Nama lengkap Anda",
+      "username": "Username",
+      "usernamePlaceholder": "huruf kecil, angka, titik, -, _",
+      "email": "Email",
+      "emailPlaceholder": "nama@email.com",
+      "password": "Password",
+      "passwordPlaceholder": "Masukkan password",
+      "passwordCreatePlaceholder": "Minimal 8 karakter, huruf + angka",
+      "showPassword": "Tampilkan password",
+      "hidePassword": "Sembunyikan password"
+    },
+    "signIn": {
+      "title": "Masuk",
+      "subtitle": "Gunakan email atau username dan password akun Anda.",
+      "submit": "Masuk",
+      "submitting": "Memproses...",
+      "noAccount": "Belum punya akun?"
+    },
+    "signUp": {
+      "title": "Daftar",
+      "subtitle": "Buat akun sebagai pencari kerja atau perusahaan.",
+      "roleLabel": "Saya mendaftar sebagai",
+      "roleSeeker": "Pencari kerja",
+      "roleEmployer": "Perusahaan",
+      "agreement": "Saya menyetujui syarat dan ketentuan serta kebijakan privasi Kerjaindong.",
+      "submit": "Daftar",
+      "submitting": "Memproses...",
+      "haveAccount": "Sudah punya akun?"
+    },
+    "errors": {
+      "identifierRequired": "Email atau username wajib diisi",
+      "passwordRequired": "Password wajib diisi",
+      "fullNameRequired": "Nama lengkap wajib diisi",
+      "usernameInvalid": "Username harus 3-50 karakter huruf kecil, angka, titik, strip, atau underscore",
+      "emailInvalid": "Format email tidak valid",
+      "passwordMin": "Password minimal 8 karakter",
+      "passwordMax": "Password maksimal 128 karakter",
+      "passwordPattern": "Password harus mengandung huruf dan angka",
+      "agreementRequired": "Anda harus menyetujui syarat dan ketentuan"
+    }
+  },
+  "dashboard": {
+    "seeker": {
+      "title": "Dashboard Pencari Kerja",
+      "description": "Ringkasan profil, lamaran, dan lowongan tersimpan Anda. Fitur lengkap hadir pada fase berikutnya.",
+      "profileIncomplete": "Profil pencari kerja Anda belum lengkap. Lengkapi profil agar bisa melamar lowongan.",
+      "comingSoon": "Form profil segera hadir"
+    },
+    "employer": {
+      "title": "Dashboard Perusahaan",
+      "description": "Kelola lowongan, pelamar, dan profil perusahaan Anda. Fitur lengkap hadir pada fase berikutnya.",
+      "companyMissing": "Akun Anda belum terhubung ke perusahaan. Buat profil perusahaan untuk mulai memasang lowongan."
+    },
+    "admin": {
+      "title": "Dashboard Admin",
+      "description": "Backoffice moderasi: verifikasi perusahaan, kelola pengguna, moderasi lowongan, dan audit log. Hadir pada fase berikutnya."
+    }
+  },
+  "notFound": {
+    "metaTitle": "Halaman Tidak Ditemukan | Kerjaindong",
+    "metaDescription": "Halaman yang Anda cari tidak ditemukan.",
+    "message": "Kami tidak dapat menemukan halaman yang Anda cari.",
+    "backHome": "Kembali ke Beranda"
+  }
+}

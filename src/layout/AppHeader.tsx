@@ -1,6 +1,7 @@
 "use client";
 
 import { ThemeToggleButton } from "@/components/common/ThemeToggleButton";
+import BrandMark from "@/components/common/BrandMark";
 import NotificationDropdown from "@/components/header/NotificationDropdown";
 import UserDropdown from "@/components/header/UserDropdown";
 import { useSidebar } from "@/context/SidebarContext";
@@ -10,7 +11,7 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
 
 const AppHeader: React.FC = () => {
-  const { t } = useTranslation("header");
+  const { t } = useTranslation();
   const inputRef = useRef<HTMLInputElement>(null);
   const [isApplicationMenuOpen, setApplicationMenuOpen] = useState(false);
 
@@ -52,7 +53,7 @@ const AppHeader: React.FC = () => {
               isMobileOpen ? "bg-gray-100 dark:bg-white/3" : ""
             }`}
             onClick={handleToggle}
-            aria-label={t("toggleSidebar")}
+            aria-label={t("header.toggleSidebar")}
           >
             {isMobileOpen ? (
               <svg
@@ -90,16 +91,7 @@ const AppHeader: React.FC = () => {
           </button>
 
           <Link to="/" className="xl:hidden">
-            <img
-              className="dark:hidden"
-              src="/images/logo/logo.svg"
-              alt="Logo"
-            />
-            <img
-              className="hidden dark:block"
-              src="/images/logo/logo-dark.svg"
-              alt="Logo"
-            />
+            <BrandMark compact />
           </Link>
 
           <button
@@ -145,7 +137,7 @@ const AppHeader: React.FC = () => {
                 <input
                   ref={inputRef}
                   type="text"
-                  placeholder={t("searchPlaceholder")}
+                  placeholder={t("header.searchPlaceholder")}
                   className="dark:bg-dark-900 h-11 w-full rounded-lg border border-gray-200 bg-transparent py-2.5 ps-12 pe-14 text-sm text-gray-800 shadow-theme-xs placeholder:text-gray-400 focus:border-brand-300 focus:ring-3 focus:ring-brand-500/10 focus:outline-hidden xl:w-107.5 dark:border-gray-800 dark:bg-white/3 dark:text-white/90 dark:placeholder:text-white/30 dark:focus:border-brand-800"
                 />
                 <button className="absolute inset-e-2.5 top-1/2 inline-flex -translate-y-1/2 items-center gap-0.5 rounded-lg border border-gray-200 bg-gray-50 px-1.75 py-[4.5px] text-xs tracking-[-0.2px] text-gray-500 dark:border-gray-800 dark:bg-white/3 dark:text-gray-400">
